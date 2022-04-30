@@ -37,6 +37,7 @@
 .category-container{
     margin: 2rem 0;
     display: flex;
+    gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -45,7 +46,6 @@
     width: 25rem;
     height: 15rem;
     border-radius: 5px;
-    margin: 0 2rem;
     position: relative;
     display: flex;
     justify-content: center;
