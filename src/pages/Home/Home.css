@@ -1,0 +1,71 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0.9;
+    height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-image: url('../../assets/images/tbanner.jpg');
+}
+.banner-text{
+    color: var(--white);
+    margin: 0 5rem;
+    
+}
+.banner-text button{
+    padding: 1rem 1.2rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem 0;
+    width: 50%;
+    border-radius: 3px;
+}
+
+.banner img {
+    max-height: 100%;
+    width: 100%;
+}
+.category-section{
+    margin: 2rem 0 3rem 0;
+    text-align: center;
+}
+
+.category-container{
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-item{
+    width: 25rem;
+    height: 15rem;
+    border-radius: 5px;
+    margin: 0 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.category-item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.overlay-text{
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+
+
