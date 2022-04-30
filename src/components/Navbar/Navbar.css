@@ -1,0 +1,29 @@
+.navbar {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.greytext {
+    color: var(--blue);
+}
+
+.redtext {
+    color: var(--red);
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 1rem;
+    margin: 0 2rem;
+}
+
+.navbar-end button {
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: var(--crimson);
+    color: var(--white);
+    border: none;
+    font-size: 1rem;
+    border-radius: 3px;
+
+}
