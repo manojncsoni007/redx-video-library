@@ -1,8 +1,11 @@
 import React from 'react'
+import { Sidebar } from '../../components'
 
 const VideoListing = () => {
   return (
-    <div>VideoListing</div>
+    <>
+    <Sidebar/>
+    </>
   )
 }
 
