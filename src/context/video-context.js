@@ -1,13 +1,15 @@
 import axios from "axios";
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { videoReducer } from '../reducer'
+import { getFilteredVideo } from "../utils";
 
 const VideoContext = createContext();
 
 const VideoProvider = ({ children }) => {
     const [videoState, videoDispatch] = useReducer(videoReducer, {
-        videos: [],
-        categories: []
+        video: [],
+        categories: [],
+        categoryFilter: 'All'
     })
 
     useEffect(() => {
@@ -15,15 +17,28 @@ const VideoProvider = ({ children }) => {
             try {
                 const { data: { categories } } = await axios.get("/api/categories");
                 videoDispatch({ type: "SET_CATEGORIES", payload: categories })
+                const { data } = await axios.get("/api/videos");
+                videoDispatch({ type: "SET_VIDEOS", payload: data.videos });
             } catch (error) {
                 console.log(error);
             }
         })();
     }, []);
-    
-    const {categories} = videoState;
+
+    const { categories, video, categoryFilter } = videoState;
+    console.log(video)
+    console.log(categoryFilter)
+    const filteredVideo = getFilteredVideo(video,categoryFilter);
+    console.log(filteredVideo)
+
+
     return (
-        <VideoContext.Provider value={{ categories }}>
+        <VideoContext.Provider value={{
+            categories,
+            video,
+            filteredVideo,
+            videoDispatch
+        }}>
             {children}
         </VideoContext.Provider>
     )

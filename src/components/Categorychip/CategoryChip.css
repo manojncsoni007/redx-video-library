@@ -1,0 +1,11 @@
+.category-chip{
+    border: 1px solid #a19f9f;
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.category-chip:hover{
+    background-color: lightgray;
+}
