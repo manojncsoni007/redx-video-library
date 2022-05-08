@@ -2,6 +2,9 @@
     background-color: var(--white);
     color: var(--black);
 }
+.navbar h5{
+    font-size: 1rem;
+}
 
 .grey-text {
     color: var(--blue);
@@ -28,12 +31,11 @@
 
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px){
     .navbar-menu {
         gap: 0.5rem;
     }
-
-    .navbar {
+    .navbar{
         padding-left: 1rem;
         padding-right: 1rem;
     }

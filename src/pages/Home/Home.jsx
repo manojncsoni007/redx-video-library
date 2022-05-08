@@ -11,10 +11,10 @@ const Home = () => {
     <>
       <header className='banner '>
         <div className='banner-text'>
-          <h1>Watch Videos on</h1>
-          <h1>Technology Startup <br /> and Finance</h1>
-          <h3>Watch Videos on</h3>
-          <h3>Technology Startup <br /> and Finance</h3>
+          <h2>Watch Videos on</h2>
+          <h2>Technology Startup <br /> and Finance</h2>
+          <h4>Watch Videos on</h4>
+          <h4>Technology Startup <br /> and Finance</h4>
           <Link to='/explore'>
             <button>Explore Videos </button>  
           </Link>

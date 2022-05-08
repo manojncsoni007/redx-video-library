@@ -13,5 +13,14 @@
   margin: 2rem 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 480px){
+  .videolisting-container{
+    display: block;
+  }
+  .video-section{
+    justify-content: center;
+  }
 }

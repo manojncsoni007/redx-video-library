@@ -14,7 +14,7 @@
 .sidebar-container ul li{
     padding: 0.8rem 1rem;  
     margin: 0.2rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
 }
@@ -28,4 +28,10 @@
     align-items: center;
     color: var(--black);
     text-decoration: none;
+}
+
+@media only screen and (max-width: 480px){
+    .sidebar-container{
+        display: none;
+    }
 }
