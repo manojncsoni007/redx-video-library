@@ -13,6 +13,8 @@ const Home = () => {
         <div className='banner-text'>
           <h1>Watch Videos on</h1>
           <h1>Technology Startup <br /> and Finance</h1>
+          <h3>Watch Videos on</h3>
+          <h3>Technology Startup <br /> and Finance</h3>
           <Link to='/explore'>
             <button>Explore Videos </button>
           </Link>
