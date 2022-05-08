@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav class="navbar">
             <div className='flex-center'>
                 <div class="navbar-title">
-                    <Link to="/"><span className='greytext'>Red</span><span className='redtext'>X</span></Link>
+                    <Link to="/"><span className='grey-text'>Red</span><span className='red-text'>X</span></Link>
                 </div>
                 <div className='flex-center navbar-menu'>
                     <Link to="/"><h5>HOME</h5></Link>
@@ -18,7 +18,6 @@ const Navbar = () => {
                 <Link to='/'> <button>
                     Login
                 </button></Link>
-
             </div>
         </nav>
     )
