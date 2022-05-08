@@ -1,9 +1,7 @@
 import "./App.css";
 import { Navbar } from "./components";
 import { Home, VideoListing } from "./pages";
-import { Route, Router, Routes } from 'react-router-dom';
-// import { Home, VideoListing } from "./pages";
-
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (

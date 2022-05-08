@@ -1,0 +1,27 @@
+.video-card{
+    width: 23rem;
+    height: 18rem;
+    border: 1px solid #b6b2b2;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.card-image{
+    width: 100%;
+    max-height: 70%;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+.video-card_footer{
+    padding: 0.8rem;
+}
+.space-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.video-card_title{
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.1rem;
+}

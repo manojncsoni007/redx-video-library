@@ -1,5 +1,13 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+:root {
+    --light-gray : #F7F7F7
+}
+
+body {
+    background-color: var(--light-gray);
 }
