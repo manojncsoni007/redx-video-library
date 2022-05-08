@@ -16,7 +16,7 @@ const Home = () => {
           <h3>Watch Videos on</h3>
           <h3>Technology Startup <br /> and Finance</h3>
           <Link to='/explore'>
-            <button>Explore Videos </button>
+            <button>Explore Videos </button>  
           </Link>
         </div>
       </header>

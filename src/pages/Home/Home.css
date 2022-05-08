@@ -13,7 +13,9 @@
 .banner-text {
     color: var(--white);
     margin: 0 5rem;
-
+}
+.banner-text h3{
+    display: none;
 }
 
 .banner-text button {
