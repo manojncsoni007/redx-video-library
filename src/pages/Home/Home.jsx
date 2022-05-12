@@ -27,7 +27,7 @@ const Home = () => {
             <Link to='/'>
               <div className='category-item'>
                 <img src={category.categoryImage} alt={category.categoryName} />
-                <p class="overlay-text flex-center">{category.categoryName}</p>
+                <p className="overlay-text flex-center">{category.categoryName}</p>
               </div>
             </Link>
 

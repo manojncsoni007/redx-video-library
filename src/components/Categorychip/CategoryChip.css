@@ -7,5 +7,12 @@
 }
 
 .category-chip:hover{
-    background-color: lightgray;
+    background-color: crimson;
+    color: var(--white);
+    border: crimson;
+}
+.active-category{
+    background-color:crimson ;
+    color: var(--white);
+    border: crimson;
 }

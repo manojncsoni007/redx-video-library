@@ -26,17 +26,14 @@ const VideoProvider = ({ children }) => {
     }, []);
 
     const { categories, video, categoryFilter } = videoState;
-    console.log(video)
-    console.log(categoryFilter)
     const filteredVideo = getFilteredVideo(video,categoryFilter);
-    console.log(filteredVideo)
-
 
     return (
         <VideoContext.Provider value={{
             categories,
             video,
             filteredVideo,
+            categoryFilter,
             videoDispatch
         }}>
             {children}

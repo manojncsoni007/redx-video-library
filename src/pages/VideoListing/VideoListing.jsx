@@ -14,12 +14,12 @@ const VideoListing = () => {
         <div className="chip-container">
           <CategoryChip cat='All' />
           {categories.map((item) => (
-            <CategoryChip cat={item.categoryName}/>
+            <CategoryChip cat={item.categoryName} key={item.categoryName}/>
           ))}
         </div>
         <div className='video-section' >
           {filteredVideo.map((item) => (
-            <VideoCard src={item.thumbnail} title={item.title} duration={item.duration} creator={item.creator} />
+            <VideoCard video={item} key={item._id}/>
           ))}
         </div>
       </div>
