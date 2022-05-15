@@ -1,11 +1,3 @@
-.videolisting-container {
-  display: grid;
-  grid-template-columns: 18% 1fr;
-}
-
-.main-section {
-  padding: 2rem;
-}
 
 .video-section {
   display: flex;
