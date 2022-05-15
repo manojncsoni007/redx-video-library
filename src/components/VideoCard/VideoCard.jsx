@@ -1,37 +1,46 @@
 import { React, useState } from 'react'
 import './VideoCard.css'
 import { RiPlayListAddFill } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 
 
 const VideoCard = ({ video }) => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const { thumbnail, title, duration, creator } = video
+  const { _id, thumbnail, title, duration, creator, avtar } = video;
+  let navigate = useNavigate();
   return (
     <>
       <div className='video-card'>
-        <img src={thumbnail} className='card-image' />
+        <img src={thumbnail} className='card-image' onClick={() => navigate(`/video/${_id}`)} />
         <div className="video-card_footer">
-          <div className='space-between'>
-            <span className='video-card_title'>{title}</span>
-            <div className='dropdown'>
-              <i className="fas ellipsis-vertical fa-x" onClick={() => setShowDropdown(!showDropdown)}></i>
-              <div className={`dropdown-content ${showDropdown ? 'show' : 'hide'}`}>
-                <ul>
-                  <li className='space-between'>
-                    <i className="fas fa-clock"></i>
-                    <span>Add to watch later</span>
-                  </li>
-                  <li className='space-between'>
-                    <RiPlayListAddFill />
-                    <span>Add to watch later</span>
-                  </li>
-                </ul>
+          <div className="avtar">
+            <img src={avtar} class="rounded-avtar" alt="avatar" />
+          </div>
+          <div className='footer-header'>
+            <div className='footer-info'>
+              <span className='video-card_title'>
+              {title.length > 45 ? title.substring(0, 45) + "..." : title}
+              </span>
+              <div className='dropdown'>
+                <i className="fas ellipsis-vertical fa-x" onClick={() => setShowDropdown(!showDropdown)}></i>
+                <div className={`dropdown-content ${showDropdown ? 'show' : 'hide'}`}>
+                  <ul>
+                    <li>
+                      <i className="fas fa-clock"></i>
+                      <span>Add to watch later</span>
+                    </li>
+                    <li>
+                      <RiPlayListAddFill />
+                      <span>Save to Playlist</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="space-between">
-            <p className='text-m'>{creator}</p>
-            <p>{duration}</p>
+            <div className="space-between text-gray">
+              <p className='text-m'>{creator}</p>
+              <p>{duration}</p>
+            </div>
           </div>
         </div>
       </div>

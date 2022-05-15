@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<VideoListing />} />
-        {/* <Route path='/video'  element={<SingleVideo/>} /> */}
+        <Route path="/video/:videoId" element={<SingleVideo />} />
       </Routes>
 
     </>

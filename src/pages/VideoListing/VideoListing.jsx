@@ -1,12 +1,12 @@
 import React from 'react'
 import './VideoListing.css'
 import { CategoryChip, Sidebar, VideoCard } from '../../components'
-import { useVideo } from '../../context/video-context'
+import { useVideo } from '../../context'
 
 const VideoListing = () => {
   const { categories, filteredVideo } = useVideo();
   return (
-    <div className='videolisting-container'>
+    <div className='explore-grid-container'>
       <aside>
         <Sidebar />
       </aside>
