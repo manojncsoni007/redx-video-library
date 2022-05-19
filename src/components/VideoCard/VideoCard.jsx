@@ -14,7 +14,7 @@ const VideoCard = ({ video }) => {
         <img src={thumbnail} className='card-image' onClick={() => navigate(`/video/${_id}`)} />
         <div className="video-card_footer">
           <div className="avtar">
-            <img src={avtar} class="rounded-avtar" alt="avatar" />
+            <img src={avtar} className="rounded-avtar" alt="avatar" />
           </div>
           <div className='footer-header'>
             <div className='footer-info'>
