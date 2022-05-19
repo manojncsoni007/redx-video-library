@@ -1,2 +1,2 @@
-export {VideoProvider} from './video-context'
-export {useVideo} from './video-context'
+export { useVideo, VideoProvider } from './video-context'
+export { usePlaylist, PlaylistProvider } from './playlist-context'

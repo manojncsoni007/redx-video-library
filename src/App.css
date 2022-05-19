@@ -14,7 +14,7 @@ body {
     background-color: var(--light-gray);
     font-family: 'Montserrat', sans-serif;
 }
-.explore-grid-container{
+.grid-container{
     display: grid;
     grid-template-columns: 18% 1fr;
 }

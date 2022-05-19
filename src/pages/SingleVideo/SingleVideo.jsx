@@ -12,7 +12,7 @@ const SingleVideo = () => {
   let filteredVideo = video.find((video) => video._id === videoId);
   return (
     <>
-      <div className='explore-grid-container'>
+      <div className='grid-container'>
         <div>
           <Sidebar />
         </div>
