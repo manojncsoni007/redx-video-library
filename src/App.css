@@ -24,6 +24,6 @@ body {
 
 @media only screen and (max-width: 480px){
    html{
-       font-size: 62.5%;
+       font-size: 75%;
    }
 }

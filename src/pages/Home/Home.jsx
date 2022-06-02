@@ -24,7 +24,7 @@ const Home = () => {
         <h3>Category</h3>
         <div className="category-container">
           {categories.map((category) => (
-            <Link to='/'>
+            <Link to='/' key={category.id}>
               <div className='category-item'>
                 <img src={category.categoryImage} alt={category.categoryName} />
                 <p className="overlay-text flex-center">{category.categoryName}</p>

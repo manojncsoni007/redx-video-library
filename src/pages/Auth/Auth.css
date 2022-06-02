@@ -1,0 +1,64 @@
+.auth-container {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 2rem 2rem;
+    background-color: var(--white);
+}
+
+form a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    float: right;
+}
+
+.guest-btn {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid var(--crimson);
+    color: var(--crimson);
+    background-color: inherit;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    font-size: 0.9rem;
+}
+.auth-btn {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: var(--crimson);
+    color: var(--white);
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.input-container {
+    margin: 1rem 0;
+}
+
+.user-auth {
+    /* margin: 1.5rem; */
+    font-size: small;
+}
+
+.login-remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
