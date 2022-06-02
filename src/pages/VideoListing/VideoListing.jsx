@@ -2,6 +2,7 @@ import React from 'react'
 import './VideoListing.css'
 import { CategoryChip, Sidebar, VideoCard } from '../../components'
 import { useVideo } from '../../context'
+import { ToastContainer } from 'react-toastify'
 
 const VideoListing = () => {
   const { categories, filteredVideo } = useVideo();
