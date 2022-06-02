@@ -31,7 +31,7 @@ const SingleVideo = () => {
             </div>
             <div className='video_player-btn'>
               <button>
-                <i class="fas fa-thumbs-up"></i>
+                <i className="fas fa-thumbs-up"></i>
                 <span>Like</span>
               </button>
               <button>
