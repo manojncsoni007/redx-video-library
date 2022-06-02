@@ -1,8 +1,9 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export function successToast(message) {
-  toast.success(message, {
+export function showToast(type, message) {
+  return toast(message, {
+    type: type,
     position: "top-right",
     autoClose: 2000,
     hideProgressBar: false,

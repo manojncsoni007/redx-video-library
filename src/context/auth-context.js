@@ -1,7 +1,8 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { successToast } from "../utils/toast";
+import { useLocation } from "react-router-dom";
+import { showToast } from "../utils/toast";
 
 
 const AuthContext = createContext();
@@ -11,8 +12,9 @@ const AuthProvider = ({ children }) => {
     const [token, setToken] = useState("");
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const loginUser = async (email, password, setError) => {
+    const loginUser = async (email, password) => {
         try {
             const {
                 data: { user, encodedToken }, status
@@ -23,14 +25,11 @@ const AuthProvider = ({ children }) => {
                 setUser(user);
                 navigate(location.state?.from?.pathname || "/");
                 localStorage.setItem("token", encodedToken);
-                successToast('login successful');
-            } else {
-                setError(true)
+                showToast("success","You logged in successfully");
             }
 
         } catch (error) {
             console.log(error);
-            setError(true)
         }
     }
 
