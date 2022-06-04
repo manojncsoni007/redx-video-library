@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sidebar, VideoCard } from '../../components'
+import { PlaylistVideoCard, Sidebar, VideoCard } from '../../components'
 import { usePlaylist } from '../../context'
 import "./WatchLater.css"
 
@@ -14,11 +14,11 @@ const WatchLater = () => {
         </aside>
         <div className="main-section">
         {watchLater.map((item) => (
-            <VideoCard video={item} key={item._id}/>
+            // <VideoCard video={item} key={item._id}/>
+            <PlaylistVideoCard video={item} key={item._id}/>
           ))}
         </div>
       </div>
-
     </>
   )
 }

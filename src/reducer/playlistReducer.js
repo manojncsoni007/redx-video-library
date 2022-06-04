@@ -1,8 +1,7 @@
-const playlistReducer = (state, action) => {
-    switch (action.type) {
+const playlistReducer = (state, {type,payload}) => {
+    switch (type) {
         case "ADD_TO_WATCH_LATER":
-            // return { ...state, watchLater: action.payload }
-            console.log(action.payload);
+            return { ...state, watchLater: payload }
         default: return state
     }
 }

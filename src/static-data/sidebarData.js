@@ -16,12 +16,12 @@ const sidebarData = [
     },
     {
         title: 'Watch later',
-        path: '/watch-later',
+        path: '/watchlater',
         icon: 'fas fa-heart'
     },
     {
         title: 'Liked Videos',
-        path: '/liked-vidoes',
+        path: '/likedvidoes',
         icon: 'fas fa-thumbs-up'
     },
     {
