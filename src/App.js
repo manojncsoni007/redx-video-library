@@ -9,7 +9,7 @@ function App() {
     <>
       <Navbar />
       <ToastContainer />
-      <Routes>
+     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<VideoListing />} />
         <Route path="/video/:videoId" element={<SingleVideo />} />
