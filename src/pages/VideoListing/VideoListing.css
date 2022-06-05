@@ -7,12 +7,23 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
+.main-section{
+  display: flex;
+  flex-direction: column;
+}
+.chip-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
-@media only screen and (max-width: 480px){
-  .videolisting-container{
+@media only screen and (max-width: 950px){
+  .grid-container{
     display: block;
   }
   .video-section{
+    /* width: 100%; */
     justify-content: center;
   }
+  
 }

@@ -27,9 +27,8 @@ const AuthProvider = ({ children }) => {
                 localStorage.setItem("token", encodedToken);
                 showToast("success","You logged in successfully");
             }
-
         } catch (error) {
-            console.log(error);
+            showToast("error",{error});
         }
     }
 
@@ -45,9 +44,10 @@ const AuthProvider = ({ children }) => {
             localStorage.setItem("token", encodedToken);
             setUser(user);
             navigate('/explore');
+            showToast("success","You Signed up in successfully");
         } catch (error) {
             if (error.response.status === 422) {
-                alert('email already registered');
+                showToast("error","Email is already regitered");
             }
         }
     }

@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify'
 const VideoListing = () => {
   const { categories, filteredVideo } = useVideo();
   return (
-    <div className='explore-grid-container'>
+    <div className='grid-container'>
       <aside>
         <Sidebar />
       </aside>

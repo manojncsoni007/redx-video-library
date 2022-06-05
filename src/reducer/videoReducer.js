@@ -1,4 +1,3 @@
-
 const videoReducer = (state, action) => {
 
     switch (action.type) {
