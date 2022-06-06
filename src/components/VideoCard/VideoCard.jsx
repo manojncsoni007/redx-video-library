@@ -1,33 +1,34 @@
 import { React, useState } from 'react'
 import './VideoCard.css'
 import { RiPlayListAddFill } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { useAuth, usePlaylist } from '../../context';
-import { addToWatchLater} from '../../service/watchLater/addToWatchLater';
 import { showToast } from '../../utils/toast';
-import { removeFromWatchLater } from '../../service/watchLater/removeFromWatchLater';
+import { addToWatchLater, removeFromWatchLater } from '../../service';
+
 
 const VideoCard = ({ video }) => {
   const { _id, thumbnail, title, duration, creator, avtar } = video;
   const [showDropdown, setShowDropdown] = useState(false);
   const { watchLater, playlistDispatch } = usePlaylist();
-  const { isLoggedIn,token} = useAuth();
-  let navigate = useNavigate();
+  const { isLoggedIn, token } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const inWatchLater = watchLater.find(item => item._id === _id);
 
   const showHandler = () => {
-    isLoggedIn ? setShowDropdown(!showDropdown) : navigate("/login");
+    isLoggedIn ? setShowDropdown(!showDropdown) : navigate("/login", { state: { from: location }, replace: true });
   }
 
   const watchLaterHandler = () => {
-    addToWatchLater(video, playlistDispatch);
-    showToast("success", "Added to watch later")
+    addToWatchLater(video, token,playlistDispatch)
     setShowDropdown(false);
   }
 
   const removeHandler = () => {
-     removeFromWatchLater(_id,token,playlistDispatch);
-     setShowDropdown(false);
-     showToast("success", "Removed from watch later")
+    removeFromWatchLater(_id, token, playlistDispatch)
+    setShowDropdown(false);
   }
 
   const playlistHandler = () => {
@@ -52,7 +53,7 @@ const VideoCard = ({ video }) => {
                 <div className={`dropdown-content ${showDropdown ? 'show' : 'hide'}`}>
                   <ul>
                     {
-                      watchLater.find(item => item._id === _id) ?
+                      inWatchLater ?
                         (<li onClick={removeHandler}>
                           <i className="fas fa-clock"></i>
                           <span>Remove from watch later</span>
@@ -62,7 +63,6 @@ const VideoCard = ({ video }) => {
                           <span>Add watch later</span>
                         </li>)
                     }
-
                     <li onClick={playlistHandler}>
                       <RiPlayListAddFill />
                       <span>Save to Playlist</span>

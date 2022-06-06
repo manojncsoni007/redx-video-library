@@ -1,15 +1,48 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { Sidebar } from '../../components'
-import { useVideo } from '../../context'
+import { useAuth, usePlaylist, useVideo } from '../../context'
 import { RiPlayListAddFill } from "react-icons/ri";
 import './SingleVideo.css'
+import { addToLikedVideo, addToWatchLater } from '../../service';
 
 const SingleVideo = () => {
-  let { videoId } = useParams();
-  let { video } = useVideo();
+  const [video, setVideo] = useState();
+  const { videoId } = useParams();
+  const { isLoggedIn, token } = useAuth();
+  const { playlistDispatch } = usePlaylist();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  let filteredVideo = video.find((video) => video._id === videoId);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data: { video } } = await axios.get(`/api/video/${videoId}`);
+        setVideo(video);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [videoId]);
+
+
+  const likeHandler = () => {
+    if (isLoggedIn) {
+      addToLikedVideo(video, token, playlistDispatch);
+    } else {
+      navigate("/login", { state: { from: location }, replace: true })
+    }
+  }
+
+  const watchlaterHandler = () => {
+    if (isLoggedIn) {
+      addToWatchLater(video, token, playlistDispatch);
+    } else {
+      navigate("/login", { state: { from: location }, replace: true })
+    }
+  }
+
   return (
     <>
       <div className='grid-container'>
@@ -26,20 +59,20 @@ const SingleVideo = () => {
           ></iframe>
           <div className="video_player-footer">
             <div className="title">
-              <h4>{filteredVideo.title}</h4>
-              <span>{filteredVideo.creator}</span>
+              <h4>{video?.title}</h4>
+              <span>{video?.creator}</span>
             </div>
             <div className='video_player-btn'>
               <button>
                 <i className="fas fa-thumbs-up"></i>
-                <span>Like</span>
+                <span onClick={likeHandler}>Like</span>
               </button>
               <button>
                 <i className="fas fa-clock"></i>
-                <span>Watch Later</span>
+                <span onClick={watchlaterHandler}>Watch Later</span>
               </button>
               <button>
-                 <RiPlayListAddFill />
+                <RiPlayListAddFill />
                 <span>Save to Playlist</span>
               </button>
             </div>

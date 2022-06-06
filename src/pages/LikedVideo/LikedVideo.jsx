@@ -1,15 +1,15 @@
 import React from 'react'
-import { PlaylistVideoCard, Sidebar } from '../../components'
+import { PlaylistVideoCard, Sidebar } from '../../components';
 import { useAuth, usePlaylist } from '../../context'
-import { removeFromWatchLater } from '../../service'
-import "./WatchLater.css"
+import { removeFromLikedVideo } from '../../service';
+import "./LikedVideo.css";
 
-const WatchLater = () => {
-  const { watchLater, playlistDispatch } = usePlaylist();
+const LikedVideo = () => {
+  const { likedVideos, playlistDispatch } = usePlaylist();
   const { token } = useAuth();
 
   const removeLikedVideo = (_id) => {
-    removeFromWatchLater(_id, token, playlistDispatch);
+    removeFromLikedVideo(_id, token, playlistDispatch);
   }
   return (
     <>
@@ -18,8 +18,8 @@ const WatchLater = () => {
           <Sidebar />
         </aside>
         <div className="main-section">
-          <h4>Watch Later ({watchLater.length} videos)</h4>
-          {watchLater.map((item) => (
+          <h4>Liked Video ({likedVideos.length} videos)</h4>
+          {likedVideos.map((item) => (
             <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removeLikedVideo(item._id)} />
           ))}
         </div>
@@ -28,4 +28,4 @@ const WatchLater = () => {
   )
 }
 
-export { WatchLater }
+export { LikedVideo }
