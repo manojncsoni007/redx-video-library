@@ -1,0 +1,26 @@
+
+.main-section{
+    display: flex;
+}
+.title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-container button{
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 950px){
+    .grid-container{
+      display: block;
+    }
+    .main-section{
+      width: 100%;
+      justify-content: center;
+    }
+    
+  }

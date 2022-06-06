@@ -5,7 +5,7 @@ import { Sidebar } from '../../components'
 import { useAuth, usePlaylist, useVideo } from '../../context'
 import { RiPlayListAddFill } from "react-icons/ri";
 import './SingleVideo.css'
-import { addToLikedVideo, addToWatchLater } from '../../service';
+import { addToHistory, addToLikedVideo, addToWatchLater } from '../../service';
 
 const SingleVideo = () => {
   const [video, setVideo] = useState();
@@ -25,6 +25,12 @@ const SingleVideo = () => {
       }
     })();
   }, [videoId]);
+
+  useEffect(() => {
+    if (isLoggedIn && video) {
+      addToHistory(video, token, playlistDispatch);
+    }
+  }, [video])
 
 
   const likeHandler = () => {

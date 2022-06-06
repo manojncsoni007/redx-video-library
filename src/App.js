@@ -1,6 +1,6 @@
 import "./App.css";
 import { Navbar, RequireAuth } from "./components";
-import { Home, LikedVideo, Login, Signup, SingleVideo, VideoListing, WatchLater } from "./pages";
+import { History, Home, LikedVideo, Login, Signup, SingleVideo, VideoListing, WatchLater } from "./pages";
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
 
@@ -20,6 +20,11 @@ function App() {
         <Route path="/likedvideos" element={
           <RequireAuth>
             <LikedVideo />
+          </RequireAuth>
+        } />
+        <Route path="/history" element={
+          <RequireAuth>
+            <History/>
           </RequireAuth>
         } />
         <Route path="/login" element={<Login />} />
