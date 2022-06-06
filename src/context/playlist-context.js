@@ -6,13 +6,14 @@ const PlaylistContext = createContext();
 const PlaylistProvider = ({ children }) => {
 
     const[playlistState,playlistDispatch] = useReducer( playlistReducer,{
-        watchLater:[]
+        watchLater:[],
+        likedVideos:[]
     })
 
-    const {watchLater} = playlistState;
+    const {watchLater,likedVideos} = playlistState;
     return (
         <>
-            <PlaylistContext.Provider value={{watchLater,playlistDispatch}}>
+            <PlaylistContext.Provider value={{watchLater,likedVideos,playlistDispatch}}>
                 {children}
             </PlaylistContext.Provider>
         </>

@@ -21,7 +21,7 @@ const sidebarData = [
     },
     {
         title: 'Liked Videos',
-        path: '/likedvidoes',
+        path: '/likedvideos',
         icon: 'fas fa-thumbs-up'
     },
     {
