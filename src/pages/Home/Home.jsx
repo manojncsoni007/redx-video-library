@@ -11,12 +11,12 @@ const Home = () => {
     <>
       <header className='banner '>
         <div className='banner-text'>
-          <h2>Watch Videos on</h2>
-          <h2>Technology Startup <br /> and Finance</h2>
-          <h4>Watch Videos on</h4>
-          <h4>Technology Startup <br /> and Finance</h4>
+          <h1>Watch Videos on</h1>
+          <h1>Technology Startup <br /> and Finance</h1>
+          <h3>Watch Videos on</h3>
+          <h3>Technology Startup <br /> and Finance</h3>
           <Link to='/explore'>
-            <button>Explore Videos </button>  
+            <button>Explore Videos </button>
           </Link>
         </div>
       </header>
@@ -24,10 +24,10 @@ const Home = () => {
         <h3>Category</h3>
         <div className="category-container">
           {categories.map((category) => (
-            <Link to='/' key={category.id}>
+            <Link to='/'>
               <div className='category-item'>
                 <img src={category.categoryImage} alt={category.categoryName} />
-                <p className="overlay-text flex-center">{category.categoryName}</p>
+                <p class="overlay-text flex-center">{category.categoryName}</p>
               </div>
             </Link>
 
