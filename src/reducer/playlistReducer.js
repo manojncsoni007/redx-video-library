@@ -4,6 +4,8 @@ const playlistReducer = (state, { type, payload }) => {
             return { ...state, watchLater: payload }
         case "UPDATE_LIKED_VIDEOS":
             return { ...state, likedVideos: payload }
+        case "UPDATE_HISTORY":
+            return { ...state, history: payload }
         default: return state
     }
 }
