@@ -1,0 +1,35 @@
+.horizontal-video-card{
+    display: flex;
+    width: 100%;
+    border: 1px solid #b6b2b2;
+    border-radius: 0.4rem;
+    height: 12rem;
+    margin: 0.5rem 0;
+    /* background-color: var(--white); */
+    border-color: var(--gray);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.horizontal-video-card img{
+    padding: 0.5rem;
+    width: 20rem;
+    height: auto;
+    border-radius: 0.4rem;
+}
+.horizontal-video-card_footer{
+    display: flex;
+    padding: 0.5rem 0.5rem;
+    gap: 1rem;
+}
+.horizontal-video-card_footer i {
+    cursor: pointer;
+}
+.horizontal-video-footer-header{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.creator-title{
+    font-size: 1.1rem;
+    color: var(--gray);
+    font-weight: 400;
+}

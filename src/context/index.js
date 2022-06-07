@@ -1,1 +1,6 @@
-export {VideoProvider,useVideo} from './video-context'
+export {VideoProvider} from './video-context'
+export {useVideo} from './video-context'
+export {AuthProvider} from './auth-context'
+export {useAuth} from './auth-context'
+export {PlaylistProvider} from './playlist-context'
+export {usePlaylist} from './playlist-context'

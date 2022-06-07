@@ -1,0 +1,40 @@
+.main-section iframe {
+  width: 100%;
+  height: 65vh;
+  border-radius: 0.5rem;
+}
+.video-footer {
+  margin: 0.5rem 0.5rem;
+}
+.video_player-footer .title {
+  width: 100%;
+  padding-left :0.5rem;
+}
+.title h4{
+  font-size: 1.2rem;
+  line-height: 2;
+}
+.title span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.video_player-btn {
+  padding: 1rem 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+.video_player-btn button{
+  padding: 0.7rem 0.9rem;
+  border-radius: 1.2rem;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--text-gray);
+  color: var(--white);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.video_player-btn button:hover{
+  transform: scale(1.02);
+}

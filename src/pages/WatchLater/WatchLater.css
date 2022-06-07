@@ -1,0 +1,15 @@
+
+.main-section{
+    display: flex;
+}
+
+@media only screen and (max-width: 950px){
+    .grid-container{
+      display: block;
+    }
+    .main-section{
+      width: 100%;
+      justify-content: center;
+    }
+    
+  }
