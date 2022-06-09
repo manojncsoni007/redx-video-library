@@ -5,15 +5,17 @@ import { PlaylistModal, Sidebar } from '../../components'
 import { useAuth, usePlaylist, useVideo } from '../../context'
 import { RiPlayListAddFill } from "react-icons/ri";
 import './SingleVideo.css'
-import { addToHistory, addToLikedVideo, addToWatchLater } from '../../service';
+import { addToHistory, addToLikedVideo, addToWatchLater, removeFromLikedVideo } from '../../service';
 
 const SingleVideo = () => {
   const [video, setVideo] = useState();
   const { videoId } = useParams();
   const { isLoggedIn, token } = useAuth();
-  const { showModal, setShowModal, setModelData, playlistDispatch } = usePlaylist();
+  const { watchLater,likedVideos,showModal, setShowModal, setModelData, playlistDispatch } = usePlaylist();
   const location = useLocation();
   const navigate = useNavigate();
+  const isVideoLiked = likedVideos.find((video)=> video._id === videoId)
+  const isInWatchLater = watchLater.find((video)=> video._id === videoId)
 
   useEffect(() => {
     (async () => {
@@ -35,7 +37,11 @@ const SingleVideo = () => {
 
   const likeHandler = () => {
     if (isLoggedIn) {
-      addToLikedVideo(video, token, playlistDispatch);
+      if(!isVideoLiked){
+        addToLikedVideo(video, token, playlistDispatch);
+      } else {
+        removeFromLikedVideo(videoId,token,playlistDispatch);
+      }
     } else {
       navigate("/login", { state: { from: location }, replace: true })
     }
@@ -57,7 +63,6 @@ const SingleVideo = () => {
       navigate("/login", { state: { from: location }, replace: true })
     }
   }
-
   return (
     <>
       {showModal && <PlaylistModal />}
@@ -81,11 +86,12 @@ const SingleVideo = () => {
             <div className='video_player-btn'>
               <button>
                 <i className="fas fa-thumbs-up"></i>
-                <span onClick={likeHandler}>Like</span>
+                <span onClick={likeHandler}>
+                  {isVideoLiked ? "Liked" : "Like"}</span>
               </button>
-              <button>
-                <i className="fas fa-clock"></i>
-                <span onClick={watchlaterHandler}>Watch Later</span>
+              <button onClick={watchlaterHandler}>
+                {isInWatchLater ? (<i className="fas fa-check-circle"></i>) : (<i className="fas fa-clock"></i>)}
+                <span>Watch later</span>
               </button>
               <button onClick={playlistHandler}>
                 <RiPlayListAddFill />
