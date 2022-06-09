@@ -17,7 +17,7 @@
     margin: 0 2rem;
 }
 
-.navbar-end button {
+.navbar-end  {
     cursor: pointer;
     padding: 0.5rem;
     background-color: var(--crimson);
@@ -25,5 +25,4 @@
     border: none;
     font-size: 1rem;
     border-radius: 3px;
-
 }
