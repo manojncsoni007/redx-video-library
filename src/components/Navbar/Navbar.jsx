@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav class="navbar">
+        <nav className="navbar">
             <div className='flex-center'>
-                <div class="navbar-title">
+                <div className="navbar-title">
                     <Link to="/"><span className='grey-text'>Red</span><span className='red-text'>X</span></Link>
                 </div>
                 <div className='flex-center navbar-menu'>
@@ -14,7 +14,7 @@ const Navbar = () => {
                     <Link to="/explore"><h5>EXPLORE</h5></Link>
                 </div>
             </div>
-            <div class="navbar-end">
+            <div className="navbar-end">
                 <Link to='/'> <button>
                     Login
                 </button></Link>
