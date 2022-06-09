@@ -10,7 +10,7 @@ import { addToWatchLater, removeFromWatchLater } from '../../service';
 const VideoCard = ({ video }) => {
   const { _id, thumbnail, title, duration, creator, avtar } = video;
   const [showDropdown, setShowDropdown] = useState(false);
-  const { watchLater, playlistDispatch } = usePlaylist();
+  const { watchLater,setShowModal,setModelData, playlistDispatch } = usePlaylist();
   const { isLoggedIn, token } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,7 +32,9 @@ const VideoCard = ({ video }) => {
   }
 
   const playlistHandler = () => {
+    setShowModal(true);
     setShowDropdown(false);
+    setModelData(video);
   }
 
   return (

@@ -6,6 +6,7 @@
 }
 :root {
     --light-gray :#F7F7F7 ;
+    --model-bg: rgba(177, 177, 179, 0.3);
 }
 html{
     font-size: 100%;
