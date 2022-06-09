@@ -21,9 +21,9 @@ function App() {
         <Route path="/playlist/:playlistId" element={<PlaylistContainer/>}
         />
         <Route path="/watchlater" element={
-          
+          <RequireAuth>
             <WatchLater />
-         
+          </RequireAuth>
         } />
         <Route path="/likedvideos" element={
           <RequireAuth>
