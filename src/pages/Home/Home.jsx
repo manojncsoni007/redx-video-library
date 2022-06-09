@@ -1,10 +1,18 @@
 import React from 'react'
 import './Home.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useVideo } from '../../context'
 
 
+
 const Home = () => {
+  const { videoDispatch } = useVideo();
+  const navigate = useNavigate();
+
+  const categoryHandler = (categoryName) => {
+    videoDispatch({ type: "FILTER_VIDEO_CATEGORYWISE", payload: categoryName })
+    navigate("/explore");
+  }
 
   const { categories } = useVideo();
   return (
@@ -24,12 +32,12 @@ const Home = () => {
         <h3>Category</h3>
         <div className="category-container">
           {categories.map((category) => (
-            <Link to='/'>
+            <span key={category._id} onClick={() => categoryHandler(category.categoryName)}>
               <div className='category-item'>
                 <img src={category.categoryImage} alt={category.categoryName} />
                 <p className="overlay-text flex-center">{category.categoryName}</p>
               </div>
-            </Link>
+            </span>
 
           ))}
         </div>

@@ -15,9 +15,9 @@ const VideoListing = () => {
         </aside>
         <div className='main-section'>
           <div className="chip-container">
-            <CategoryChip cat='All' />
+            <CategoryChip category='All' />
             {categories.map((item) => (
-              <CategoryChip cat={item.categoryName} key={item.categoryName} />
+              <CategoryChip category={item.categoryName} key={item.categoryName} />
             ))}
           </div>
           <div className='video-section' >
