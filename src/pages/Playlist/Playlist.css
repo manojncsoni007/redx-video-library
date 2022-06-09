@@ -1,0 +1,35 @@
+.main-section{
+    display: flex;
+}
+.playlist-card-container{
+  padding: 2rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.playlist-card-container a{
+  text-decoration: none;
+  border: 1px solid;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 1rem;
+}
+.playlist-card{
+   width: 30rem;
+   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 950px){
+    .grid-container{
+      display: block;
+    }
+    .main-section{
+      width: 100%;
+      justify-content: center;
+    }
+    
+  }

@@ -1,20 +1,34 @@
-import { createContext, useContext, useReducer, useEffect } from 'react'
+import { createContext, useContext, useReducer, useState } from 'react'
 import { playlistReducer } from '../reducer';
 
 const PlaylistContext = createContext();
 
 const PlaylistProvider = ({ children }) => {
+    const [showModal, setShowModal] = useState(false);
+    const [modalData, setModelData] = useState({});
 
     const [playlistState, playlistDispatch] = useReducer(playlistReducer, {
         watchLater: [],
         likedVideos: [],
-        history: []
+        history: [],
+        playlist: []
     })
 
-    const { watchLater, likedVideos, history } = playlistState;
+    const { watchLater, likedVideos, history,playlist } = playlistState;
+    console.log(playlist)
     return (
         <>
-            <PlaylistContext.Provider value={{ watchLater, likedVideos, history, playlistDispatch }}>
+            <PlaylistContext.Provider value={{
+                watchLater,
+                likedVideos,
+                history,
+                playlist,
+                showModal,
+                modalData,
+                setShowModal,
+                setModelData,
+                playlistDispatch
+            }}>
                 {children}
             </PlaylistContext.Provider>
         </>

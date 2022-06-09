@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
-import { Sidebar } from '../../components'
+import { PlaylistModal, Sidebar } from '../../components'
 import { useAuth, usePlaylist, useVideo } from '../../context'
 import { RiPlayListAddFill } from "react-icons/ri";
 import './SingleVideo.css'
@@ -11,7 +11,7 @@ const SingleVideo = () => {
   const [video, setVideo] = useState();
   const { videoId } = useParams();
   const { isLoggedIn, token } = useAuth();
-  const { playlistDispatch } = usePlaylist();
+  const { showModal,setShowModal,setModelData,playlistDispatch } = usePlaylist();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -49,8 +49,14 @@ const SingleVideo = () => {
     }
   }
 
+  const playlistHandler = () => {
+    setShowModal(true);
+    setModelData(video)
+  }
+
   return (
     <>
+    {showModal && <PlaylistModal/> }
       <div className='grid-container'>
         <div>
           <Sidebar />
@@ -77,7 +83,7 @@ const SingleVideo = () => {
                 <i className="fas fa-clock"></i>
                 <span onClick={watchlaterHandler}>Watch Later</span>
               </button>
-              <button>
+              <button onClick={playlistHandler}>
                 <RiPlayListAddFill />
                 <span>Save to Playlist</span>
               </button>
