@@ -11,7 +11,7 @@ const SingleVideo = () => {
   const [video, setVideo] = useState();
   const { videoId } = useParams();
   const { isLoggedIn, token } = useAuth();
-  const { showModal,setShowModal,setModelData,playlistDispatch } = usePlaylist();
+  const { showModal, setShowModal, setModelData, playlistDispatch } = usePlaylist();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -50,13 +50,17 @@ const SingleVideo = () => {
   }
 
   const playlistHandler = () => {
-    setShowModal(true);
-    setModelData(video)
+    if (isLoggedIn) {
+      setShowModal(true);
+      setModelData(video)
+    } else {
+      navigate("/login", { state: { from: location }, replace: true })
+    }
   }
 
   return (
     <>
-    {showModal && <PlaylistModal/> }
+      {showModal && <PlaylistModal />}
       <div className='grid-container'>
         <div>
           <Sidebar />

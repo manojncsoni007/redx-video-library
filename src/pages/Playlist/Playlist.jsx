@@ -23,7 +23,7 @@ const Playlist = () => {
                                     className='playlist-card'>
                                     <div className='space-between'>
                                         <div>{item.title} <span className='text-m'>({item.videos.length} video)</span></div>
-                                        <i class="fas fa-paper-plane"></i>
+                                        <i className="fas fa-paper-plane"></i>
                                     </div>
                                 </Link>
                             ))
