@@ -11,7 +11,7 @@ const PlaylistModal = () => {
     const [showInput, setShowInput] = useState(false);
 
     const createPlaylistHandler = () => {
-        if (playlistName.length > 0) {
+        if (playlistName.trim() !== "") {
             createNewPlaylist(playlistName, token, playlistDispatch, setShowInput);
             setPlaylistName("");
         } else {

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useVideo } from '../../context'
 
 const Home = () => {
-  const { videoDispatch } = useVideo();
+  const { videoDispatch, categories } = useVideo();
   const navigate = useNavigate();
 
   const categoryHandler = (categoryName) => {
@@ -12,7 +12,6 @@ const Home = () => {
     navigate("/explore");
   }
 
-  const { categories } = useVideo();
   return (
     <>
       <header className='banner '>

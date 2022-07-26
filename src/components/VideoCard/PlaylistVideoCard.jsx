@@ -1,14 +1,10 @@
 import React from 'react'
 import './PlaylistVideoCard.css'
 import { useNavigate } from 'react-router-dom';
-import { removeFromWatchLater } from '../../service/watchLater/removeFromWatchLater';
-import { useAuth, usePlaylist } from '../../context';
-import { showToast } from '../../utils/toast';
 
 const PlaylistVideoCard = ({ video, removeHandler }) => {
   const { _id, thumbnail, title, duration, creator, description } = video;
-  const { token } = useAuth();
-  const { playlistDispatch } = usePlaylist();
+  
   const navigate = useNavigate();
 
   return (

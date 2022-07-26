@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
                 showToast("success","You logged in successfully");
             }
         } catch (error) {
-            showToast("error",{error});
+            showToast("error",error.response.data.errors[0]);
         }
     }
 
@@ -48,6 +48,8 @@ const AuthProvider = ({ children }) => {
         } catch (error) {
             if (error.response.status === 422) {
                 showToast("error","Email is already regitered");
+            } else {
+                showToast("error",error.response.data.errors[0]);
             }
         }
     }
