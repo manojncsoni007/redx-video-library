@@ -7,7 +7,7 @@ const sidebarData = [
     {
         title: 'Explore',
         path: '/explore',
-        icon: 'fas fa-photo-video'
+        icon: 'fas fa-search'
     },
     {
         title: 'Playlist',

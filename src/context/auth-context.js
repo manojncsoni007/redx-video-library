@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    const signupUser = async (firstName, lastName, email, password,) => {
+    const signupUser = async (firstName, lastName, email, password) => {
         try {
             const {
                 data: { user, encodedToken }

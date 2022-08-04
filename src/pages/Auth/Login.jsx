@@ -6,15 +6,15 @@ import './Auth.css'
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error,setError] = useState(false);
+    // const [error,setError] = useState(false);
     const { loginUser } = useAuth();
 
-    const loginHandler = async (e) => {
+    const loginHandler = (e) => {
         e.preventDefault();
-        loginUser(email, password,setError);
+        loginUser(email, password);
     }
 
-    const dummyHandler = async (e) => {
+    const dummyHandler = (e) => {
         e.preventDefault();
         setEmail('manojsoni@gmail.com');
         setPassword('manoj123');
@@ -36,7 +36,7 @@ const Login = () => {
                     </div>
                     <button className="guest-btn" onClick={(e) => dummyHandler(e)}>Use Guest Credentials</button>
                     <button className="auth-btn">Login</button>
-                    {error && <p>Invalid Email or Password</p> }
+                    {/* {error && <p>Invalid Email or Password</p> } */}
                     <div className="flex-center">
                         <Link to="/signup"> Create New Account <i className="fa fa-chevron-right"></i></Link>
                     </div>
