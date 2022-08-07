@@ -5,17 +5,17 @@ import { PlaylistModal, Sidebar } from '../../components'
 import { useAuth, usePlaylist, useVideo } from '../../context'
 import { RiPlayListAddFill } from "react-icons/ri";
 import './SingleVideo.css'
-import { addToHistory, addToLikedVideo, addToWatchLater, removeFromLikedVideo } from '../../service';
+import { addToHistory, addToLikedVideo, addToWatchLater, removeFromLikedVideo, removeFromWatchLater } from '../../service';
 
 const SingleVideo = () => {
   const [video, setVideo] = useState();
   const { videoId } = useParams();
   const { isLoggedIn, token } = useAuth();
-  const { watchLater,likedVideos,showModal, setShowModal, setModelData, playlistDispatch } = usePlaylist();
+  const { watchLater, likedVideos, showModal, setShowModal, setModelData, playlistDispatch } = usePlaylist();
   const location = useLocation();
   const navigate = useNavigate();
-  const isVideoLiked = likedVideos.find((video)=> video._id === videoId)
-  const isInWatchLater = watchLater.find((video)=> video._id === videoId)
+  const isVideoLiked = likedVideos.find((video) => video._id === videoId)
+  const isInWatchLater = watchLater.find((video) => video._id === videoId)
 
   useEffect(() => {
     (async () => {
@@ -37,10 +37,10 @@ const SingleVideo = () => {
 
   const likeHandler = () => {
     if (isLoggedIn) {
-      if(!isVideoLiked){
+      if (!isVideoLiked) {
         addToLikedVideo(video, token, playlistDispatch);
       } else {
-        removeFromLikedVideo(videoId,token,playlistDispatch);
+        removeFromLikedVideo(videoId, token, playlistDispatch);
       }
     } else {
       navigate("/login", { state: { from: location }, replace: true })
@@ -49,7 +49,11 @@ const SingleVideo = () => {
 
   const watchlaterHandler = () => {
     if (isLoggedIn) {
-      addToWatchLater(video, token, playlistDispatch);
+      if (!isInWatchLater) {
+        addToWatchLater(video, token, playlistDispatch);
+      } else {
+        removeFromWatchLater(videoId, token, playlistDispatch);
+      }
     } else {
       navigate("/login", { state: { from: location }, replace: true })
     }

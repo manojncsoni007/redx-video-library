@@ -15,7 +15,6 @@ const PlaylistProvider = ({ children }) => {
     })
 
     const { watchLater, likedVideos, history,playlist } = playlistState;
-    console.log('playlist name',playlist);
     return (
         <>
             <PlaylistContext.Provider value={{
