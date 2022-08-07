@@ -2,6 +2,7 @@
     display: flex;
 }
 
+
 @media only screen and (max-width: 950px){
     .grid-container{
       display: block;

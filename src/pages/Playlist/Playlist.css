@@ -21,6 +21,18 @@
    width: 30rem;
    cursor: pointer;
 }
+.no-videos-container{
+  margin: 1px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+#no-playlist_btn {
+  color: var(--white);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
 
 
 @media only screen and (max-width: 950px){
