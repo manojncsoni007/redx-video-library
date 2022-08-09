@@ -17,7 +17,7 @@ const PlaylistVideoCard = ({ video, removeHandler }) => {
             <span className='video-card_title'>
               {title.length > 100 ? title.substring(0, 45) + "..." : title}
             </span>
-            <p>{description.length > 150 ? description.substring(0, 100) + "..." : description}</p>
+            <p className='description'>{description.length > 150 ? description.substring(0, 100) + "..." : description}</p>
             <div className="space-between text-gray">
               <p>{duration}</p>
             </div>

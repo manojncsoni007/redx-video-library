@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <>
-      <header className='banner '>
+      <header className='banner'>
         <div className='banner-text'>
           <h1>Watch Videos on</h1>
           <h1>Technology Startup <br /> and Finance</h1>

@@ -1,14 +1,16 @@
 import React from 'react'
 import './Navbar.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth, usePlaylist } from '../../context'
 import { showToast } from '../../utils/toast'
-import { MdMenu } from "react-icons/md";
 
 const Navbar = () => {
     const { isLoggedIn, setIsLoggedIn } = useAuth();
     const { playlistDispatch, hamburgerMenu, setHamburgerMenu } = usePlaylist();
+
     const navigate = useNavigate();
+    const { pathname } = useLocation();
+
     const logOutHandler = () => {
         setIsLoggedIn(false);
         playlistDispatch({ type: "ADD_TO_WATCH_LATER", payload: [] })
@@ -22,11 +24,14 @@ const Navbar = () => {
         <nav id="navbar" className="navbar">
             <div className='flex-center'>
                 <div className="navbar-hamburger">
-                    <i
-                        className="fa fa-bars drawer-hamberg-btn"
-                        aria-hidden="true"
-                        onClick={() => setHamburgerMenu(!hamburgerMenu)}
-                    />
+                    {
+                        pathname !== "/" && <i
+                            className="fa fa-bars drawer-hamberg-btn"
+                            aria-hidden="true"
+                            onClick={() => setHamburgerMenu(!hamburgerMenu)}
+                        />
+                    }
+
                 </div>
                 <div className="navbar-title">
                     <Link to="/"><span className='grey-text'>Red</span><span className='red-text'>X</span></Link>

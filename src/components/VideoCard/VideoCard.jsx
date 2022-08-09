@@ -56,12 +56,12 @@ const VideoCard = ({ video }) => {
                     {
                       inWatchLater ?
                         (<li onClick={removeHandler}>
-                          <i className="fas fa-clock"></i>
-                          <span>Remove from watch later</span>
+                          <i className="fas fa-check-circle"></i>
+                          <span>Watch later</span>
                         </li>) :
                         (<li onClick={watchLaterHandler}>
                           <i className="fas fa-clock"></i>
-                          <span>Add watch later</span>
+                          <span>Watch later</span>
                         </li>)
                     }
                     <li onClick={playlistHandler}>
