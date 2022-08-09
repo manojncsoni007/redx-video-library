@@ -88,9 +88,9 @@
 .dropdown-content ul li:hover{
     background-color: var(--light-gray);
 }
-@media only screen and (max-width: 569px){
+@media only screen and (max-width: 48em){
     .video-card{
-        width: 80%;
+        width: 95%;
         height: auto;
     }
 }

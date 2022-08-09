@@ -87,8 +87,11 @@ body {
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media screen and (max-width: 48em) {
   html {
     font-size: 90%;
+  }
+  .main-section {
+    padding: 1.2rem 0.5rem;
   }
 }

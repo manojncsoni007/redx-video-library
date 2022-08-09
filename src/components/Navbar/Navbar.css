@@ -26,3 +26,28 @@
     font-size: 1rem;
     border-radius: 3px;
 }
+.navbar-hamburger{
+    display: none;
+}
+.navbar-hamburger i{
+    font-size: 1.3rem;
+    margin-right: 0.8rem;
+    margin-top: 0.1rem;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 500px){
+    .navbar-menu{
+        margin: 0 1rem
+    }
+    #navbar{    
+        padding: 0.6rem 1.5rem;
+    }
+    .navbar .navbar-menu{
+        display: none;
+    } 
+    .navbar-hamburger{
+        display: block;
+    }
+}

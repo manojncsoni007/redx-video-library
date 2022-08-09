@@ -4,6 +4,7 @@ import { playlistReducer } from '../reducer';
 const PlaylistContext = createContext();
 
 const PlaylistProvider = ({ children }) => {
+    const [hamburgerMenu, setHamburgerMenu] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [modalData, setModelData] = useState({});
 
@@ -18,12 +19,14 @@ const PlaylistProvider = ({ children }) => {
     return (
         <>
             <PlaylistContext.Provider value={{
+                hamburgerMenu,
                 watchLater,
                 likedVideos,
                 history,
                 playlist,
                 showModal,
                 modalData,
+                setHamburgerMenu,
                 setShowModal,
                 setModelData,
                 playlistDispatch

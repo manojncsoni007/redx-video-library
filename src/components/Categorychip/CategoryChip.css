@@ -16,3 +16,10 @@
     color: var(--white);
     border: crimson;
 }
+
+@media screen and (max-width: 48em){
+    .category-chip{
+        margin: 0 0.1rem;
+        padding: 0.3rem 0.8rem;
+    }
+}
