@@ -23,7 +23,9 @@ const LikedVideo = () => {
           {
             likedVideos.length > 0 ? (
               likedVideos.map((item) => (
-                <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removeLikedVideo(item._id)} />
+                <div className="video-list">
+                  <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removeLikedVideo(item._id)} />
+                </div>
               ))
             ) :
               (

@@ -35,7 +35,9 @@ const History = () => {
           {
             history.length > 0 ? (
               history.map((item) => (
-                <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removeHistory(item._id)} />
+                <div className="video-list">
+                  <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removeHistory(item._id)} />
+                </div>
               ))
             ) : (
               <div className="no-videos-container">
@@ -47,6 +49,7 @@ const History = () => {
               </div>
             )
           }
+
         </div>
       </div>
     </>

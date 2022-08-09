@@ -8,16 +8,16 @@ import "./PlaylistContainer.css"
 const PlaylistContainer = () => {
   const { playlistId } = useParams();
   const navigate = useNavigate();
-  const {token} = useAuth();
+  const { token } = useAuth();
   const { playlist, playlistDispatch } = usePlaylist();
   const currentPlaylist = playlist.find((playlist) => playlist._id === playlistId)
-  
+
   const removePlaylistVideo = (_id) => {
-      removeVideoFromPlaylist(_id,playlistId,token,playlistDispatch);
+    removeVideoFromPlaylist(_id, playlistId, token, playlistDispatch);
   }
 
   const deletePlaylistHandler = () => {
-    deletePlaylist(playlistId,token,playlistDispatch);
+    deletePlaylist(playlistId, token, playlistDispatch);
     navigate("/playlist");
   }
 
@@ -34,8 +34,9 @@ const PlaylistContainer = () => {
           </div>
           {
             currentPlaylist?.videos.map((item) => (
-              <PlaylistVideoCard video={item} key={item._id} removeHandler={()=>removePlaylistVideo(item._id)}/>
-
+              <div className="video-list">
+                <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removePlaylistVideo(item._id)} />
+              </div>
             ))
           }
         </div>

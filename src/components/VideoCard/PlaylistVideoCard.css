@@ -35,6 +35,7 @@
 @media only screen and (max-width: 500px){
     .horizontal-video-card{
         flex-direction: column;
+        width: 95%;
         height: 23rem;
     }
     .description{
@@ -44,11 +45,4 @@
         width: 100%;
         height: 20rem;
     }
-    /* .horizontal-video-card_footer{
-        display: none;
-    } */
-    /* .horizontal-video-card_footer{
-        height: max-content;
-        overflow: hidden;
-    } */
 }

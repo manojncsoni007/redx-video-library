@@ -23,7 +23,10 @@ const WatchLater = () => {
           {
             watchLater.length > 0 ? (
               watchLater.map((item) => (
-                <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removeLikedVideo(item._id)} />
+                <div className="video-list">
+                  <PlaylistVideoCard video={item} key={item._id} removeHandler={() => removeLikedVideo(item._id)} />
+                </div>
+
               ))
             ) : (
               <div className="no-videos-container">
