@@ -81,6 +81,7 @@ I can see a hide-show icon button that shows or hides my password.
 
 I can see a login page from where I can log in using my email & password.
 
+
 ## Logout
 
 I can see a logout button from where I can logout from the app
