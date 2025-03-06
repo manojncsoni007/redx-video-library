@@ -5,7 +5,6 @@
 RedX is a fully functional video library which provides the different pages like Home Page,Video lising page, Playlist Management, Like/Dislike, Watch Later, History,Login/Signup page.
 
 ## Whats's included?
-
 - Home Page
 - Video lising page
 - Single video page
