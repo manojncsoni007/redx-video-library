@@ -1,5 +1,4 @@
 # RedX Video | Video Library
-
 [Live Link](https://redx-videos.netlify.app/)
 
 RedX is a fully functional video library which provides the different pages like Home Page,Video lising page, Playlist Management, Like/Dislike, Watch Later, History,Login/Signup page.
@@ -18,7 +17,6 @@ RedX is a fully functional video library which provides the different pages like
 ## Whats's Features/Functionalities included?
 
 - Authentication
-
   - Users can sign-up for your app
   - Users can log in to your app
   - Users can logout from your app
